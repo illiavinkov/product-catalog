@@ -3,12 +3,12 @@ import { ChangeEvent } from 'react';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phones: Phone[],
-  setPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
-  itemsPerPage: string,
-  setItemsPerPage: React.Dispatch<React.SetStateAction<string>>,
-  sortOption: string,
-  setSortOption: React.Dispatch<React.SetStateAction<string>>,
+  phones: Phone[];
+  setPhones: React.Dispatch<React.SetStateAction<Phone[]>>;
+  itemsPerPage: string;
+  setItemsPerPage: React.Dispatch<React.SetStateAction<string>>;
+  sortOption: string;
+  setSortOption: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const Selection: React.FC<Props> = ({
@@ -47,8 +47,12 @@ export const Selection: React.FC<Props> = ({
           <option className="select__option" value="name">
             Alphabetically
           </option>
-          <option className="select__option" value="age">Newest</option>
-          <option className="select__option" value="price">Cheapest</option>
+          <option className="select__option" value="age">
+            Newest
+          </option>
+          <option className="select__option" value="price">
+            Cheapest
+          </option>
         </select>
       </label>
 

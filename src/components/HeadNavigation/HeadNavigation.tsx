@@ -9,8 +9,8 @@ import { Phone } from '../../types/Phone';
 import { CartItem } from '../../types/CartItem';
 
 type Props = {
-  likedProducts: Phone[],
-  cartProducts: CartItem[],
+  likedProducts: Phone[];
+  cartProducts: CartItem[];
 };
 
 export const HeadNavigation: React.FC<Props> = ({
@@ -26,36 +26,44 @@ export const HeadNavigation: React.FC<Props> = ({
 
         <NavLink
           to="/"
-          className={({ isActive }) => classNames('head-navigation__element', {
-            'head-navigation__element--active': isActive,
-          })}
+          className={({ isActive }) =>
+            classNames('head-navigation__element', {
+              'head-navigation__element--active': isActive,
+            })
+          }
         >
           home
         </NavLink>
 
         <NavLink
           to="/phones"
-          className={({ isActive }) => classNames('head-navigation__element', {
-            'head-navigation__element--active': isActive,
-          })}
+          className={({ isActive }) =>
+            classNames('head-navigation__element', {
+              'head-navigation__element--active': isActive,
+            })
+          }
         >
           Phones
         </NavLink>
 
         <NavLink
           to="/tablets"
-          className={({ isActive }) => classNames('head-navigation__element', {
-            'head-navigation__element--active': isActive,
-          })}
+          className={({ isActive }) =>
+            classNames('head-navigation__element', {
+              'head-navigation__element--active': isActive,
+            })
+          }
         >
           tablets
         </NavLink>
 
         <NavLink
           to="/accessories"
-          className={({ isActive }) => classNames('head-navigation__element', {
-            'head-navigation__element--active': isActive,
-          })}
+          className={({ isActive }) =>
+            classNames('head-navigation__element', {
+              'head-navigation__element--active': isActive,
+            })
+          }
         >
           accessories
         </NavLink>
@@ -67,9 +75,11 @@ export const HeadNavigation: React.FC<Props> = ({
         <div className="elements-border">
           <NavLink
             to="/favourites"
-            className={({ isActive }) => classNames('icon icon--fav', {
-              'icon--fav--active': isActive,
-            })}
+            className={({ isActive }) =>
+              classNames('icon icon--fav', {
+                'icon--fav--active': isActive,
+              })
+            }
           >
             {!!likedProducts.length && (
               <div className="counter">{likedProducts.length}</div>
@@ -80,9 +90,11 @@ export const HeadNavigation: React.FC<Props> = ({
         <div className="elements-border">
           <NavLink
             to="/shoppingBag"
-            className={({ isActive }) => classNames('icon icon--bag', {
-              'icon--bag--active': isActive,
-            })}
+            className={({ isActive }) =>
+              classNames('icon icon--bag', {
+                'icon--bag--active': isActive,
+              })
+            }
           >
             {!!cartProducts.length && (
               <div className="counter">{cartProducts.length}</div>

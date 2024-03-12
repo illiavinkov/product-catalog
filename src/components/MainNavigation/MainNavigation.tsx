@@ -7,19 +7,16 @@ export const MainNavigation = () => {
 
   const crumbs = useLocation()
     .pathname.split('/')
-    .filter((crumb) => crumb !== '');
+    .filter(crumb => crumb !== '');
 
   return (
     <div className="main-navigation">
-      <div
-        className="main-navigation__content"
-        data-cy="breadCrumbs"
-      >
+      <div className="main-navigation__content" data-cy="breadCrumbs">
         <Link to="/">
           <img src={home} alt="home" className="main-navigation__home" />
         </Link>
 
-        {crumbs.map((crumb) => {
+        {crumbs.map(crumb => {
           const title = crumb.split('-').join(' ');
 
           currentLink += `/${crumb.toLowerCase()}`;

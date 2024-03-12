@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useLocation } from 'react-router-dom';
 import search from '../../Icons/search.svg';
 import cross from '../../Icons/closeBlack.svg';
@@ -6,7 +7,7 @@ import { setQuery, setResults } from '../../features/search';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 export const Search: React.FC = () => {
-  const searchQuery = useAppSelector((state) => state.search.query);
+  const searchQuery = useAppSelector(state => state.search.query);
   const dispatch = useAppDispatch();
 
   const location = useLocation();

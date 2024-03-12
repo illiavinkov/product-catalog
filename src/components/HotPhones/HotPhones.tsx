@@ -4,11 +4,11 @@ import { PhoneSlider } from '../PhoneSlider/PhoneSlider';
 import { CartItem } from '../../types/CartItem';
 
 type Props = {
-  phones: Phone[],
-  likedProducts: Phone[],
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  phones: Phone[];
+  likedProducts: Phone[];
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export const HotPhones: React.FC<Props> = ({

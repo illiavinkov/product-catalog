@@ -5,10 +5,10 @@ import rightArrow from '../../Icons/arrow-right-black.svg';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phones: Phone[],
-  itemsPerPage: string,
-  currentPage: number,
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
+  phones: Phone[];
+  itemsPerPage: string;
+  currentPage: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const Bottom: React.FC<Props> = ({
@@ -26,13 +26,13 @@ export const Bottom: React.FC<Props> = ({
 
   const handlePreviousClick = () => {
     if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
+      setCurrentPage(prevPage => prevPage - 1);
     }
   };
 
   const handleNextClick = () => {
     if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
+      setCurrentPage(prevPage => prevPage + 1);
     }
   };
 
@@ -54,20 +54,21 @@ export const Bottom: React.FC<Props> = ({
       </button>
 
       <div className="bottom__pages">
-        {Array.from({ length: endPage - startPage + 1 },
-          (_, index) => startPage + index)
-          .map((page) => (
-            <button
-              key={page}
-              className={classNames('bottom__page bottom__button', {
-                'bottom__page--active': currentPage === page,
-              })}
-              onClick={() => handlePageClick(page)}
-              type="submit"
-            >
-              {page}
-            </button>
-          ))}
+        {Array.from(
+          { length: endPage - startPage + 1 },
+          (_, index) => startPage + index,
+        ).map(page => (
+          <button
+            key={page}
+            className={classNames('bottom__page bottom__button', {
+              'bottom__page--active': currentPage === page,
+            })}
+            onClick={() => handlePageClick(page)}
+            type="submit"
+          >
+            {page}
+          </button>
+        ))}
       </div>
 
       <button

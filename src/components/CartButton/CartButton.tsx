@@ -5,9 +5,9 @@ import { CartItem } from '../../types/CartItem';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
-  phone?: Phone,
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  phone?: Phone;
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export const CartButton: React.FC<Props> = ({
@@ -17,16 +17,16 @@ export const CartButton: React.FC<Props> = ({
 }) => {
   const [buttonText, setButtonText] = useState('Add to cart');
   const [isInCart, setIsInCart] = useState(
-    phone ? cartProducts.some(
-      (cartProduct) => cartProduct.id === phone.id,
-    ) : false,
+    phone
+      ? cartProducts.some(cartProduct => cartProduct.id === phone.id)
+      : false,
   );
 
   const handleAddToCart = () => {
     if (phone) {
-      setCartProducts((prevCartProducts) => {
+      setCartProducts(prevCartProducts => {
         const existingCartItemIndex = prevCartProducts.findIndex(
-          (cartItem) => cartItem.product.id === phone.id,
+          cartItem => cartItem.product.id === phone.id,
         );
 
         if (existingCartItemIndex !== -1) {

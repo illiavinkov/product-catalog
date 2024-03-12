@@ -9,11 +9,7 @@ export const BackButton = () => {
     <div className="back-btn" data-cy="backButton">
       <img src={leftArrow} alt="leftArrow" />
 
-      <button
-        type="button"
-        className="back-btn__text"
-        onClick={handleGoBack}
-      >
+      <button type="button" className="back-btn__text" onClick={handleGoBack}>
         Back
       </button>
     </div>

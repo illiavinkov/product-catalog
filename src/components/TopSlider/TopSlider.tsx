@@ -9,11 +9,7 @@ import leftArrow from '../../Icons/arrow-left-black.svg';
 import rightArrow from '../../Icons/arrow-right-black.svg';
 
 export const TopSlider = () => {
-  const images = [
-    phones,
-    accessories,
-    tablets,
-  ];
+  const images = [phones, accessories, tablets];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselWidth = 1040;
@@ -29,7 +25,7 @@ export const TopSlider = () => {
           break;
         }
 
-        setCurrentSlide((prev) => prev + carouselWidth);
+        setCurrentSlide(prev => prev + carouselWidth);
         break;
 
       case 'next':
@@ -38,7 +34,7 @@ export const TopSlider = () => {
           break;
         }
 
-        setCurrentSlide((prev) => prev - carouselWidth);
+        setCurrentSlide(prev => prev - carouselWidth);
         break;
 
       default:
@@ -62,13 +58,9 @@ export const TopSlider = () => {
             className="top-slider__inner"
             style={{ transform: `translateX(${currentSlide}px)` }}
           >
-            {images.map((image) => (
+            {images.map(image => (
               <div className="top-slider__images--item" key={image}>
-                <img
-                  src={image}
-                  alt="slide"
-                  className="top-slider__image"
-                />
+                <img src={image} alt="slide" className="top-slider__image" />
               </div>
             ))}
           </div>
@@ -87,14 +79,12 @@ export const TopSlider = () => {
         {images.map((_, index) => (
           <div
             key={images[index].id}
-            className={classNames(
-              'top-slider__dot', {
-                'top-slider__dot--active':
-                  -currentSlide / carouselWidth === index,
-              },
-            )}
+            className={classNames('top-slider__dot', {
+              'top-slider__dot--active':
+                -currentSlide / carouselWidth === index,
+            })}
             onClick={() => setCurrentSlide(-carouselWidth * index)}
-            onKeyDown={(event) => {
+            onKeyDown={event => {
               if (event.key === 'Enter' || event.key === ' ') {
                 setCurrentSlide(-carouselWidth * index);
               }
@@ -102,9 +92,7 @@ export const TopSlider = () => {
             role="button"
             tabIndex={0}
           >
-            <p hidden>
-              dots
-            </p>
+            <p hidden>dots</p>
           </div>
         ))}
       </div>

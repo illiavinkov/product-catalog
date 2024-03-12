@@ -2,14 +2,17 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  product: string,
-  colour: string,
-  capacities: string[],
-  currCapacity: string,
+  product: string;
+  colour: string;
+  capacities: string[];
+  currCapacity: string;
 };
 
 export const Capacity: React.FC<Props> = ({
-  capacities, currCapacity, product, colour,
+  capacities,
+  currCapacity,
+  product,
+  colour,
 }) => {
   return (
     <div className="capacity__content">

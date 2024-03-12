@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone?: Phone,
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  likedProducts: Phone[],
+  phone?: Phone;
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  likedProducts: Phone[];
 };
 
 export const FavouritesButton: React.FC<Props> = ({
@@ -12,15 +12,15 @@ export const FavouritesButton: React.FC<Props> = ({
   likedProducts,
   setLikedProducts,
 }) => {
-  const isLiked = phone ? likedProducts.some(
-    (likedProduct) => likedProduct.id === phone.id,
-  ) : false;
+  const isLiked = phone
+    ? likedProducts.some(likedProduct => likedProduct.id === phone.id)
+    : false;
 
   const handleToggleFavorite = () => {
     if (phone) {
       if (isLiked) {
         const updatedLikedProducts = likedProducts.filter(
-          (likedProduct) => likedProduct.id !== phone.id,
+          likedProduct => likedProduct.id !== phone.id,
         );
 
         setLikedProducts(updatedLikedProducts);
@@ -46,9 +46,7 @@ export const FavouritesButton: React.FC<Props> = ({
         })}
         data-cy="addToFavorite"
       >
-        <p hidden>
-          favourites
-        </p>
+        <p hidden>favourites</p>
       </button>
     </div>
   );
