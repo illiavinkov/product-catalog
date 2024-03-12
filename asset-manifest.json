@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "./static/css/main.55489939.css",
+    "main.js": "./static/js/main.867cc91d.js",
+    "static/media/banner-phones.png": "./static/media/banner-phones.b4eeda8bd82b712057a2.png",
+    "static/media/phones.png": "./static/media/phones.fe4132249b23077a0edc.png",
+    "static/media/tablets.png": "./static/media/tablets.7ae5b2db5a97c50c7b3e.png",
+    "static/media/banner-tablets.png": "./static/media/banner-tablets.a962057c1043a08f7737.png",
+    "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/accessories.png": "./static/media/accessories.1229e3592fa05dee4d87.png",
+    "static/media/banner-accessories.png": "./static/media/banner-accessories.bdd2e0fca0159e52f41c.png",
+    "static/media/shoppingBag.svg": "./static/media/shoppingBag.1962e42406793fa66f0d.svg",
+    "static/media/favourites.svg": "./static/media/favourites.dbd19c030c984812b400.svg",
+    "static/media/logo.svg": "./static/media/logo.c94176926904d965da98d4dbb2bcedbe.svg",
+    "static/media/home.svg": "./static/media/home.d4c29e4f137b3a79235a5293536d71a0.svg",
+    "static/media/search.svg": "./static/media/search.eb670dd9ac01a47e6e00d9575822afe8.svg",
+    "static/media/favourites-Filled.svg": "./static/media/favourites-Filled.d554a185325e4fb06092.svg",
+    "static/media/closeBlack.svg": "./static/media/closeBlack.3ea864f59fecb8596c4be9c8a455c02a.svg",
+    "static/media/closeGray.svg": "./static/media/closeGray.d99189a57063cb02e093205083931441.svg",
+    "index.html": "./index.html",
+    "static/media/plus.svg": "./static/media/plus.dea157243cc9d361ac05.svg",
+    "static/media/arrow-right-black.svg": "./static/media/arrow-right-black.7365d53e50cb07ca548dbdd2c9cd8420.svg",
+    "static/media/arrow-up-black.svg": "./static/media/arrow-up-black.3ffcd791e50e94d29e18.svg",
+    "static/media/arrow-left-black.svg": "./static/media/arrow-left-black.081ebe62e01945fa5d9ab282ea190f9a.svg",
+    "static/media/arrow-left.svg": "./static/media/arrow-left.7460d67936be8c4491a8.svg",
+    "static/media/arrow-right.svg": "./static/media/arrow-right.e028d3889646e0b5e56c.svg",
+    "static/media/minusGray.svg": "./static/media/minusGray.fa9be0217c5b484c0252.svg",
+    "main.55489939.css.map": "./static/css/main.55489939.css.map",
+    "main.867cc91d.js.map": "./static/js/main.867cc91d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55489939.css",
+    "static/js/main.867cc91d.js"
+  ]
+}
