@@ -21,16 +21,16 @@ import { useAppSelector } from './app/hooks';
 const visiblePhones = (query: string, phones: Phone[]) => {
   const formattedQuery = query.trim().toLowerCase();
 
-  return phones.filter(
-    phone => phone.name.toLowerCase().includes(formattedQuery),
+  return phones.filter(phone =>
+    phone.name.toLowerCase().includes(formattedQuery),
   );
 };
 
 const visibleLikedPhones = (query: string, phones: Phone[]) => {
   const formattedQuery = query.trim().toLowerCase();
 
-  return phones.filter(
-    phone => phone.name.toLowerCase().includes(formattedQuery),
+  return phones.filter(phone =>
+    phone.name.toLowerCase().includes(formattedQuery),
   );
 };
 
@@ -38,11 +38,12 @@ const App = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [likedProducts, setLikedProducts] = useLocalStorage(
-    [], 'likedProducts',
+    [],
+    'likedProducts',
   );
   const [cartProducts, setCartProducts] = useLocalStorage([], 'cartItems');
 
-  const searchQuery = useAppSelector((state) => state.search.query);
+  const searchQuery = useAppSelector(state => state.search.query);
   const loadProducts = async () => {
     setIsLoading(true);
 
@@ -73,13 +74,15 @@ const App = () => {
         cartProducts={cartProducts}
       />
 
-      {(isLoading) ? <Loader /> : (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <>
           <div className="main">
             <Routes>
               <Route
                 path="/"
-                element={(
+                element={
                   <HomePage
                     phones={phones}
                     likedProducts={likedProducts}
@@ -87,19 +90,14 @@ const App = () => {
                     cartProducts={cartProducts}
                     setCartProducts={setCartProducts}
                   />
-                )}
-              />
-              <Route
-                path="home"
-                element={
-                  <Navigate to="/" replace />
                 }
               />
+              <Route path="home" element={<Navigate to="/" replace />} />
 
               <Route path="/phones">
                 <Route
                   index
-                  element={(
+                  element={
                     <PhonesPage
                       phones={visiblePhonesItems}
                       setPhones={setPhones}
@@ -108,11 +106,11 @@ const App = () => {
                       cartProducts={cartProducts}
                       setCartProducts={setCartProducts}
                     />
-                  )}
+                  }
                 />
                 <Route
                   path=":productId"
-                  element={(
+                  element={
                     <PhoneDetails
                       phones={phones}
                       likedProducts={likedProducts}
@@ -120,58 +118,47 @@ const App = () => {
                       cartProducts={cartProducts}
                       setCartProducts={setCartProducts}
                     />
-                  )}
+                  }
                 />
               </Route>
 
               <Route path="/tablets">
                 <Route index element={<TabletsPage />} />
-                <Route
-                  path=":productId"
-                  element={<TabletsPage />}
-                />
+                <Route path=":productId" element={<TabletsPage />} />
               </Route>
 
               <Route path="/accessories">
                 <Route index element={<AccessoriesPage />} />
-                <Route
-                  path=":productId"
-                  element={<AccessoriesPage />}
-                />
+                <Route path=":productId" element={<AccessoriesPage />} />
               </Route>
 
               <Route path="/favourites">
                 <Route
                   index
-                  element={(
+                  element={
                     <Favourites
                       likedProducts={visibleLikedItems}
                       setLikedProducts={setLikedProducts}
                       cartProducts={cartProducts}
                       setCartProducts={setCartProducts}
                     />
-                  )}
+                  }
                 />
               </Route>
 
               <Route path="/shoppingBag">
                 <Route
                   index
-                  element={(
+                  element={
                     <Cart
                       cartProducts={cartProducts}
                       setCartProducts={setCartProducts}
                     />
-                  )}
+                  }
                 />
               </Route>
 
-              <Route
-                path="*"
-                element={
-                  <NotFound />
-                }
-              />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </>

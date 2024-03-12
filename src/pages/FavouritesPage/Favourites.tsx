@@ -6,10 +6,10 @@ import { NoResults } from '../NoResultsPage/NoResults';
 import './Favourites.scss';
 
 type Props = {
-  likedProducts: Phone[],
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  likedProducts: Phone[];
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export const Favourites: React.FC<Props> = ({
@@ -24,9 +24,7 @@ export const Favourites: React.FC<Props> = ({
         <MainNavigation />
 
         <div className="favourites__content">
-          <h1 className="favourites__title">
-            Favourites
-          </h1>
+          <h1 className="favourites__title">Favourites</h1>
 
           <p className="favourites__subtitle">
             {`${likedProducts.length} items`}

@@ -7,14 +7,10 @@ export const AccessoriesPage = () => {
       <MainNavigation />
 
       <div className="tablets-page__container">
-        <h1 className="phones-page__title">
-          Accessories
-        </h1>
+        <h1 className="phones-page__title">Accessories</h1>
 
         <div className="tablets-page__text text">
-          <h1 className="text__title">
-            Oops!
-          </h1>
+          <h1 className="text__title">Oops!</h1>
 
           <h2 className="text__desc">
             Apologies for the inconvenience, but
@@ -26,7 +22,13 @@ export const AccessoriesPage = () => {
 
           <p className="error__desc">
             Maybe you want to go back to
-            <a href="https://Kinderwagen.github.io/react_phone-catalog/#/" className="error__link"> Home page </a>
+            <a
+              href="https://Kinderwagen.github.io/react_phone-catalog/#/"
+              className="error__link"
+            >
+              {' '}
+              Home page{' '}
+            </a>
             ?
           </p>
         </div>

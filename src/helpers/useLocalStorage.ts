@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Phone } from '../types/Phone';
 import { CartItem } from '../types/CartItem';
 
 export function useLocalStorage(
-  initialValue: Phone[] | CartItem[], key: string,
+  initialValue: Phone[] | CartItem[],
+  key: string,
 ) {
   const getValue = () => {
     const storage = localStorage.getItem(key);

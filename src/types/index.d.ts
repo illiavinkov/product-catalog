@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 declare module '*.svg' {
   import React = require('react');
 

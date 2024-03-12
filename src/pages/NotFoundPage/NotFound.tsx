@@ -16,7 +16,10 @@ export const NotFound = () => {
 
         <p className="error__desc">
           Maybe you want to go back to
-          <Link to="/home" className="error__link"> Home page </Link>
+          <Link to="/home" className="error__link">
+            {' '}
+            Home page{' '}
+          </Link>
           ?
         </p>
       </div>

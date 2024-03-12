@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { MainNavigation } from '../../components/MainNavigation/MainNavigation';
@@ -12,20 +13,20 @@ import { Capacity } from '../../components/Capacity/Capacity';
 import { Loader } from '../../components/Loader/Loader';
 import { CartItem } from '../../types/CartItem';
 import { BackButton } from '../../components/BackButton/BackButton';
-import { FavouritesButton } from
-  '../../components/FavouritesButton/FavouritesButton';
+// eslint-disable-next-line max-len
+import { FavouritesButton } from '../../components/FavouritesButton/FavouritesButton';
 import { CartButton } from '../../components/CartButton/CartButton';
 
 const findProductById = (itemId = '', products: Phone[]) => {
-  return products.find((product) => product.itemId === itemId);
+  return products.find(product => product.itemId === itemId);
 };
 
 type Props = {
-  phones: Phone[],
-  likedProducts: Phone[],
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  phones: Phone[];
+  likedProducts: Phone[];
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export const PhoneDetails: React.FC<Props> = ({
@@ -77,9 +78,9 @@ export const PhoneDetails: React.FC<Props> = ({
     return <Loader />;
   }
 
-  const mixedPhones = phones.sort((a: Phone, b:Phone) => b.year - a.year);
+  const mixedPhones = phones.sort((a: Phone, b: Phone) => b.year - a.year);
 
-  const foundPhone = phones.find((phone) => phone.phoneId === product?.id);
+  const foundPhone = phones.find(phone => phone.phoneId === product?.id);
 
   return (
     <div className="phones-details">
@@ -90,9 +91,7 @@ export const PhoneDetails: React.FC<Props> = ({
           <div className="phones-details__content">
             <BackButton />
 
-            <h1 className="phones-details__title">
-              {product.name}
-            </h1>
+            <h1 className="phones-details__title">{product.name}</h1>
 
             <div className="phones-details__top">
               <div className="phones-details__photos photos">
@@ -103,13 +102,21 @@ export const PhoneDetails: React.FC<Props> = ({
                       className="photos__sidebar--wrapper"
                       onClick={() => onClickHandle(image)}
                     >
-                      <img src={`new/${image}`} alt="phone" className="photos__sidebar--item" />
+                      <img
+                        src={`new/${image}`}
+                        alt="phone"
+                        className="photos__sidebar--item"
+                      />
                     </button>
                   ))}
                 </div>
 
                 <div className="photos__main">
-                  <img src={`new/${mainImg}`} alt="mainPhoto" className="photos__main-photo" />
+                  <img
+                    src={`new/${mainImg}`}
+                    alt="mainPhoto"
+                    className="photos__main-photo"
+                  />
                 </div>
               </div>
 
@@ -186,9 +193,7 @@ export const PhoneDetails: React.FC<Props> = ({
             <div className="phones-details__info info">
               <div className="info__content">
                 <div className="info__about" data-cy="productDescription">
-                  <h1 className="info__title">
-                    About
-                  </h1>
+                  <h1 className="info__title">About</h1>
 
                   {product.description.map(desc => (
                     <>
@@ -204,57 +209,27 @@ export const PhoneDetails: React.FC<Props> = ({
                 </div>
 
                 <div className="info__specs">
-                  <h1 className="info__title">
-                    Tech specs
-                  </h1>
+                  <h1 className="info__title">Tech specs</h1>
 
                   <div className="info__specs--right">
                     <div className="info__specs--names">
-                      <p className="info__text">
-                        Screen
-                      </p>
-                      <p className="info__text">
-                        Resolution
-                      </p>
-                      <p className="info__text">
-                        Processor
-                      </p>
-                      <p className="info__text">
-                        RAM
-                      </p>
-                      <p className="info__text">
-                        Camera
-                      </p>
-                      <p className="info__text">
-                        Zoom
-                      </p>
-                      <p className="info__text">
-                        Cell
-                      </p>
+                      <p className="info__text">Screen</p>
+                      <p className="info__text">Resolution</p>
+                      <p className="info__text">Processor</p>
+                      <p className="info__text">RAM</p>
+                      <p className="info__text">Camera</p>
+                      <p className="info__text">Zoom</p>
+                      <p className="info__text">Cell</p>
                     </div>
 
                     <div className="info__specs--data">
-                      <p className="info__text">
-                        {product.screen}
-                      </p>
-                      <p className="info__text">
-                        {product.resolution}
-                      </p>
-                      <p className="info__text">
-                        {product.processor}
-                      </p>
-                      <p className="info__text">
-                        {product.ram}
-                      </p>
-                      <p className="info__text">
-                        {product.camera}
-                      </p>
-                      <p className="info__text">
-                        {product.zoom}
-                      </p>
-                      <p className="info__text">
-                        {product.cell.join(', ')}
-                      </p>
+                      <p className="info__text">{product.screen}</p>
+                      <p className="info__text">{product.resolution}</p>
+                      <p className="info__text">{product.processor}</p>
+                      <p className="info__text">{product.ram}</p>
+                      <p className="info__text">{product.camera}</p>
+                      <p className="info__text">{product.zoom}</p>
+                      <p className="info__text">{product.cell.join(', ')}</p>
                     </div>
                   </div>
                 </div>

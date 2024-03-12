@@ -1,3 +1,5 @@
+/* eslint-disable react/no-deprecated */
+/* eslint-disable import/no-extraneous-dependencies */
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';

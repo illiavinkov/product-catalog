@@ -9,12 +9,12 @@ import './PhonesPage.scss';
 import { NoResults } from '../NoResultsPage/NoResults';
 
 type Props = {
-  phones: Phone[],
-  setPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  likedProducts: Phone[],
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  phones: Phone[];
+  setPhones: React.Dispatch<React.SetStateAction<Phone[]>>;
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  likedProducts: Phone[];
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 const getSortedPhones = (
@@ -64,62 +64,64 @@ export const PhonesPage: React.FC<Props> = ({
   const [currentPage, setCurrentPage] = useState(1);
 
   const visiblePhones = getSortedPhones(
-    phones, sortOption, currentPage, itemsPerPage,
+    phones,
+    sortOption,
+    currentPage,
+    itemsPerPage,
   );
 
   return (
     <>
       <div className="phones-page">
-        {!phones.length ? <NoResults />
-          : (
-            <>
-              <MainNavigation />
+        {!phones.length ? (
+          <NoResults />
+        ) : (
+          <>
+            <MainNavigation />
 
-              <div className="phones-page__content">
-                <h1 className="phones-page__title">
-                  Mobile phones
-                </h1>
+            <div className="phones-page__content">
+              <h1 className="phones-page__title">Mobile phones</h1>
 
-                <p className="phones-page__subtitle">
-                  {`${phones.length} models`}
-                </p>
+              <p className="phones-page__subtitle">
+                {`${phones.length} models`}
+              </p>
 
-                <Selection
-                  phones={visiblePhones}
-                  itemsPerPage={itemsPerPage}
-                  setItemsPerPage={setItemsPerPage}
-                  setPhones={setPhones}
-                  sortOption={sortOption}
-                  setSortOption={setSortOption}
-                />
+              <Selection
+                phones={visiblePhones}
+                itemsPerPage={itemsPerPage}
+                setItemsPerPage={setItemsPerPage}
+                setPhones={setPhones}
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+              />
 
-                <div className="phones-page__list">
-                  {visiblePhones.map(phone => {
-                    return (
-                      <div className="phones-page__list--item" key={phone.id}>
-                        <PhoneCard
-                          phone={phone}
-                          likedProducts={likedProducts}
-                          setLikedProducts={setLikedProducts}
-                          cartProducts={cartProducts}
-                          setCartProducts={setCartProducts}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {itemsPerPage !== 'all' && (
-                  <Bottom
-                    phones={phones}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                    itemsPerPage={itemsPerPage}
-                  />
-                )}
+              <div className="phones-page__list">
+                {visiblePhones.map(phone => {
+                  return (
+                    <div className="phones-page__list--item" key={phone.id}>
+                      <PhoneCard
+                        phone={phone}
+                        likedProducts={likedProducts}
+                        setLikedProducts={setLikedProducts}
+                        cartProducts={cartProducts}
+                        setCartProducts={setCartProducts}
+                      />
+                    </div>
+                  );
+                })}
               </div>
-            </>
-          )}
+
+              {itemsPerPage !== 'all' && (
+                <Bottom
+                  phones={phones}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                  itemsPerPage={itemsPerPage}
+                />
+              )}
+            </div>
+          </>
+        )}
       </div>
     </>
   );

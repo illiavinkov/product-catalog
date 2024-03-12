@@ -8,11 +8,11 @@ import { NewModels } from '../../components/NewModels/NewModels';
 import { CartItem } from '../../types/CartItem';
 
 type Props = {
-  phones: Phone[],
-  likedProducts: Phone[],
-  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>,
-  cartProducts: CartItem[],
-  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  phones: Phone[];
+  likedProducts: Phone[];
+  setLikedProducts: React.Dispatch<React.SetStateAction<Phone[]>>;
+  cartProducts: CartItem[];
+  setCartProducts: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export const HomePage: React.FC<Props> = ({
@@ -35,9 +35,7 @@ export const HomePage: React.FC<Props> = ({
           setCartProducts={setCartProducts}
         />
 
-        <Category
-          phones={phones}
-        />
+        <Category phones={phones} />
 
         <NewModels
           phones={phones}
