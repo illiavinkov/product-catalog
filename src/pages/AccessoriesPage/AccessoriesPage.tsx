@@ -23,7 +23,7 @@ export const AccessoriesPage = () => {
           <p className="error__desc">
             Maybe you want to go back to
             <a
-              href="https://Kinderwagen.github.io/react_phone-catalog/#/"
+              href="https://illiavinkov.github.io/react_phone-catalog/#/"
               className="error__link"
             >
               {' '}

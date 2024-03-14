@@ -14,7 +14,7 @@ export const FootNavigation = () => {
 
         <div className="footer__navigation">
           <a
-            href="https://github.com/Kinderwagen"
+            href="https://github.com/illiavinkov"
             target="_blank"
             className="footer__navigation--item footer__navigation--link"
             rel="noreferrer"
@@ -22,7 +22,7 @@ export const FootNavigation = () => {
             Github
           </a>
           <a
-            href="https://github.com/Kinderwagen"
+            href="https://github.com/illiavinkov"
             target="_blank"
             className="footer__navigation--item footer__navigation--link"
             rel="noreferrer"
@@ -30,7 +30,7 @@ export const FootNavigation = () => {
             Contacts
           </a>
           <a
-            href="https://github.com/Kinderwagen"
+            href="https://github.com/illiavinkov"
             target="_blank"
             className="footer__navigation--item footer__navigation--link"
             rel="noreferrer"
